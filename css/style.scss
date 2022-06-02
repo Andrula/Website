@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+body {
+    background: #F2F2F2;
+    margin: 0;
+    font-family: 'Poppins';
+    overflow-y: scroll;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Chrome*/
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+/* CSS for Header*/
+header {
+    overflow: hidden;
+}
+header img {
+width: 100%;
+height: 100%;
+}
+
+/* Code for Navigation bar */
+.navbar {
+    background: white;
+    padding: 1em;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+
+    /* Hides the navigation menu when on mobile */
+    nav {
+        display: none;
+    }
+
+
+    .mobile-menu {
+        cursor: pointer;
+    }
+
+    /* Defines distance from logo and if the list should have dots etc. */
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+nav.menu-btn {
+    display: block;
+}
+
+  /* Mobile menu navigation */
+nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: black;
+    height: 100vh;
+    padding: 1em;
+
+    ul.primary-nav {
+        margin-top: 5em;
+    }
+
+    li {
+        // Mobile menu text
+        a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: .5em;
+            font-size: 1.5em;
+            text-align: right;
+
+            &:hover {
+                color: #1e73be;
+            }
+        }
+    }
+}
+
+a {
+    display: block;
+    position: relative;
+    padding: 0em 0;
+}
+
+// Controls the text after animation
+a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.2em;
+    background-color: #1e73be;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+}
+
+li a::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+li a:hover::after,
+li a:focus::after {
+    transform:scale(1);
+    font-weight: bold;
+}
+
+.mobile-menu-exit {
+    float: right;
+    margin: .5em;
+    cursor: pointer;
+}
+
+// Controls when to switch from mobile to website view.
+@media only screen and (min-width: 768px) {
+
+    .mobile-menu,
+    .mobile-menu-exit {
+        display: none;
+    }
+
+    .navbar nav {
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+      
+        ul {
+            display: flex;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            font-size: 1em;
+            padding: .1em 1em;
+           
+        }
+        ul.primary-nav {
+            margin: 0;
+        }
+
+        // CSS for the current tab in navbar for web
+        li.current a {
+
+            color: #1e73be;
+        }
+
+        li a {
+            color: black;
+            border: 3px;
+            font-weight: bold;
+            border-radius: 5em;
+            margin-top: 0;
+
+            &:hover {
+                color: #1e73be;
+            }
+        }
+    }
+}
+
