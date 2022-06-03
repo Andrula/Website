@@ -10,7 +10,11 @@
 
 <!-- Header -->
 <header>
-    <img src="../images/webheader.jpg" alt="Andreas Hjorhøy Rasmussen">
+    <picture>
+        <source media="(max-width: 576px)" srcset="../images/header3.jpg">
+        <source media="(max-width: 1200px)" srcset="../images/header2.jpg">
+        <img src="../images/header1.jpg" alt="Andreas Hjorhøy Rasmussen">
+    </picture>
 </header>
 
 <!-- Body -->
@@ -18,15 +22,17 @@
 <body>
     <!-- Navigation bar-->
     <div class="navbar">
-        <img id="mobile-cta" class="mobile-menu" src="/images/open.svg" alt="Open Navigation">
-        <nav>
-            <img id="mobile-exit" class="mobile-menu-exit" src="../images/close.svg" alt="Close Navigation">
-            <ul class="primary-nav">
-                <li class="current"><a href="../html/index.html">Forside</> </a></li>
-                <li><a href="../html/portfolio.html">Portfolio</a></li>
-                <li><a href="../html/kontakt.html">Kontakt</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <img id="mobile-open" class="mobile-menu" src="/images/open.svg" alt="Open Navigation">
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="../images/close.svg" alt="Close Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="../html/index.html">Forside</> </a></li>
+                    <li><a href="../html/portfolio.html">Projekter</a></li>
+                    <li><a href="../html/kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
 
 
@@ -163,7 +169,7 @@
 </body>
 
 <script>
-    const mobileBtn = document.getElementById('mobile-cta')
+    const mobileBtn = document.getElementById('mobile-open')
     nav = document.querySelector('nav');
     mobileBtnExit = document.getElementById('mobile-exit');
 

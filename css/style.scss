@@ -34,12 +34,13 @@ height: 100%;
     position: sticky;
     top: 0px;
     width: 100%;
+    overflow: none;
+
 
     /* Hides the navigation menu when on mobile */
     nav {
         display: none;
     }
-
 
     .mobile-menu {
         cursor: pointer;
@@ -51,6 +52,12 @@ height: 100%;
         margin: 0;
         padding: 0;
     }
+}
+
+.container {
+    display: flex;
+    place-content: right;
+
 }
 
 nav.menu-btn {
@@ -126,55 +133,60 @@ li a:focus::after {
     cursor: pointer;
 }
 
-// Controls when to switch from mobile to website view.
-@media only screen and (min-width: 768px) {
-
-    .mobile-menu,
-    .mobile-menu-exit {
-        display: none;
-    }
-
+@media only screen and (max-width: 768px) {
     .navbar nav {
-        display: flex;
-        justify-content: space-between;
-        background: none;
-        position: unset;
-        height: auto;
-        width: 100%;
-        padding: 0;
-      
-        ul {
-            display: flex;
-            text-align: center;
-        }
-
-        a {
-            color: black;
-            font-size: 1em;
-            padding: .1em 1em;
-           
-        }
-        ul.primary-nav {
-            margin: 0;
-        }
-
-        // CSS for the current tab in navbar for web
-        li.current a {
-
-            color: #1e73be;
-        }
-
-        li a {
-            color: black;
-            border: 3px;
-            font-weight: bold;
-            border-radius: 5em;
-            margin-top: 0;
-
-            &:hover {
-                color: #1e73be;
-            }
-        }
+      justify-content: space-between;
     }
 }
-
+  
+  // Controls when to switch from mobile to website view.
+  @media only screen and (min-width: 768px) {
+  
+      .mobile-menu,
+      .mobile-menu-exit {
+          display: none;
+      }
+  
+      .navbar nav {
+          display: flex;
+          justify-content: center;
+          background: none;
+          position: unset;
+          height: auto;
+          width: 100%;
+          padding: 0;
+        
+          ul {
+              display: flex;
+              text-align: center;
+          }
+  
+          a {
+              color: black;
+              font-size: 1em;
+              padding: .1em 1em;
+             
+          }
+          ul.primary-nav {
+              margin: 0;
+          }
+  
+          // CSS for the current tab in navbar for web
+          li.current a {
+  
+              color: #1e73be;
+          }
+  
+          li a {
+              color: black;
+              border: 3px;
+              font-weight: bold;
+              border-radius: 5em;
+              margin-top: 0;
+  
+              &:hover {
+                  color: #1e73be;
+              }
+          }
+      }
+  }

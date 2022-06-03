@@ -37,6 +37,7 @@ header img {
   position: sticky;
   top: 0px;
   width: 100%;
+  overflow: none;
   /* Hides the navigation menu when on mobile */
   /* Defines distance from logo and if the list should have dots etc. */
 }
@@ -53,6 +54,13 @@ header img {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
 }
 
 nav.menu-btn {
@@ -130,6 +138,14 @@ li a:focus::after {
   cursor: pointer;
 }
 
+@media only screen and (max-width: 768px) {
+  .navbar nav {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .mobile-menu,
   .mobile-menu-exit {
@@ -139,9 +155,9 @@ li a:focus::after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     background: none;
     position: unset;
     height: auto;
